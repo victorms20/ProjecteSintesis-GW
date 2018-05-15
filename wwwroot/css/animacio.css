@@ -1,0 +1,129 @@
+*{
+	transition: top 1500ms ease;
+}
+
+body{
+	overflow:hidden;
+	
+}
+
+.foreground,
+.midground,
+.cel,.terra {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.muntanya1,.muntanya2,.muntanya3{
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+/* ******************* */
+/*   HERBA PRIMERA     */
+/* ******************* */
+
+.foreground {
+	background: url(imatges/foreground_grass.png) 0 100% repeat-x;
+	z-index: 5;
+}
+
+@keyframes parallax_fg {  
+  0% { background-position: -3584px 100%;} 
+  100% {background-position: 0 100%;} 
+}
+
+/* ******************* */
+/*   HERBA SEGONA      */
+/* ******************* */
+
+.midground {
+  background:  url(imatges/midground_grass.png) 0 100% repeat-x;
+  z-index: 4;
+}
+
+@keyframes herbasegona {  
+  0% { background-position: 0 100%;} 
+  100% {background-position: 2500px 100%;} 
+}
+
+
+/* ******************* */
+/*     MUNTANYES       */
+/* ******************* */
+
+.muntanya1{
+	background-image: url(imatges/sierra2.png);
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  z-index: 3;
+  position: absolute;	
+}
+
+@keyframes muntMoure{  
+  0% { background-position: 0 100%;} 
+  100% {background-position: 2500px 100%; } 
+}
+
+/* ******************* */
+/*       NUVOL         */
+/* ******************* */
+
+#cloud {
+	position: relative;
+	top: 20px;
+	left: -100px;
+	opacity: 0;
+	z-index: 2;
+ 	animation: sortidaNuvol 30s linear infinite;
+  
+}
+
+@keyframes sortidaNuvol {
+	0%   {opacity:0; left:-10%;}
+	25%  {opacity:0.75; left:30%;}
+	50%  {opacity:1;left:60%;}
+	75%  {opacity:0.600;left:90%;}
+  100% {opacity:0;left:100%;} 
+
+}
+
+.cloud {
+	border-radius: 90px / 30px;
+	width: 200px;
+	height: 50px;
+	background: #fff;
+	position: absolute;
+	top: 10px;
+}
+
+.cloud-2 {
+	left: 50px;
+	top: 0;
+}
+
+.cloud-3 {
+	left: 110px;
+	top: 20px;
+}
+
+/* ******************* */
+/*        CEL          */
+/* ******************* */
+
+.cel {
+	z-index: 0;
+	background-color: #525252;
+	animation: canviaCel 30s infinite;
+	
+}
+
+
+@keyframes canviaCel {
+	from 	 {background-color: rgb(139, 187, 236);}
+	to {background-color: #99CCFF;}
+}

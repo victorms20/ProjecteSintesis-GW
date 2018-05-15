@@ -1,0 +1,176 @@
+.panel-transparent {
+    background: none;
+    border: none;
+}
+
+.border-nul {
+    border: none !important;
+}
+
+.panel-transparent .panel-heading{
+    background: rgba(122, 130, 136, 0.2)!important;
+}
+
+.panel-transparent .panel-body{
+    background: rgba(46, 51, 56, 0.2)!important;
+}
+
+.btn-circle.btn-lg {
+    width: 50px;
+    height: 50px;
+    padding: 8px 4px;
+    font-size: 25px;
+    line-height: 1.33;
+    border-radius: 25px;
+  }
+
+  .margin-left{
+    margin-left: 20px !important;
+}
+
+.base {
+    z-index: 1;
+    margin-top: 125px !important;
+}
+
+.baseNumeros {
+    z-index:7;
+}
+
+.RNumeros{
+    width: 100%;
+    height: 100%;
+    transition: all .4s ease;
+}
+
+.RNumeros:hover{
+    backface-visibility: hidden;
+    transform: translateZ(0) scale(1.20); /* Safari and Chrome */
+    margin-bottom: 20px;
+}
+
+.RBanderas {
+    width: 210px;
+    height: 115px;
+}
+
+.PNumeros {
+    color:black;
+    width:40%;
+}
+
+.BarraNumeros {
+    height: 30px;
+    width: 200px;
+    margin-top: 20px;
+    border:black 2px solid;
+    box-shadow: 0 10px 6px -6px black;
+}
+
+.effectbutton {
+    transition: all .3s ease;
+}
+
+.effectbutton:hover {
+    backface-visibility: hidden;
+    transform: translateZ(0) scale(1.20); /* Safari and Chrome */
+}
+
+.BotonReinoNumeros {
+    border:none;
+    background-color: transparent !important;
+}
+.game {
+    z-index: 7;
+    display: flex;
+    flex-wrap: wrap;
+}
+.card{
+    margin: 10px;
+    height: 100px;
+    width: 200px;
+    background: linear-gradient(to bottom right, #005ACC, #4C9BFF);
+    text-align: center; 
+    color: white;
+    font-size: 5vw;
+    box-shadow: 0 15px 6px -6px black;
+    border-radius: 15%;
+    transition: all .3s ease;
+  }
+
+  .card:hover {
+    backface-visibility: hidden;
+    transform: translateZ(0) scale(1.20); /* Safari and Chrome */
+}
+
+  .vidas {
+      z-index: 8;
+  }
+
+  .vh {
+    width: 100%;
+    height: 100%;
+    margin: 15px;
+  }
+
+  .heart {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 100px;
+    height: 100px;
+    
+	box-sizing: border-box;
+	border: 5px white solid;
+	border-radius: 50%;
+	overflow: hidden;
+	box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+	transform: translatey(0px);
+	animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+.BarraAcitivdad {
+    height: 30px;
+    width: 90%;
+    margin-top: 20px;
+    border:black 2px solid;
+    box-shadow: 0 10px 6px -6px black;
+}
+
+.PNumerosA {
+    color:black;
+    width:0%;
+}
+
+.actividad {
+    z-index: 8;
+}
+
+.actividades  {
+    width: 100%;
+    height: 100%;
+}
+
+.actividadR {
+    width: 100%;
+    height: 100%;
+}
+
+.ActividadBarra {
+    width: 40%;
+}
+
