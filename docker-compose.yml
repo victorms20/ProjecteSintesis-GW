@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  pscore:
+    container_name: PSCore
+    image: pscore
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+  db:
+    container_name: DbContainer
+    image: microsoft/mssql-server-linux
+    environment:
+      - ACCEPT_EULA='Y'
+      - SA_PASSWORD=Matilla17s!
+    ports:
+      - 1433:1433

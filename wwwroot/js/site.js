@@ -1,4 +1,6 @@
-﻿var contador = 0;
+﻿// ACTIVITAT 1 - REINO NUMEROS
+
+var contador = 0;
 var vidas_a1 = 4;
 var addheart = 0;
 $( document ).ready(function() {
@@ -85,4 +87,84 @@ $( document ).ready(function() {
   
       };
       app.init();
+});
+
+//ACTIVIDAD 2 - REINO NUMEROS
+
+$(document).ready(function () {
+    for (var i = 0; i <= 4;i++) {
+        $(".r" + i).attr("disabled", false);
+    }
+
+    var alargada = $('.resultado').length;
+    var pantalla = $(".pres").text();
+    var resultado;
+
+    if (pantalla == "ONE") {
+        resultado = 1;
+    }
+
+    $(".numeroclicat1").text(2 + Math.floor(Math.random() * 5));
+    var n1 = $(".numeroclicat1").text();
+    var n2 = n1;
+
+    while (n1 == n2) {
+        $(".numeroclicat2").text(2 + Math.floor(Math.random() * 5));
+        n2 = $(".numeroclicat2").text();
+    }
+    var datos = [n1, n2];
+    var n3 = n2;
+
+    while ($.inArray(n3, datos) != -1) {
+        $(".numeroclicat3").text(2 + Math.floor(Math.random() * 5));
+        n3 = $(".numeroclicat3").text();
+    }
+    datos.push(n3);
+    var n4 = n3;
+
+    while ($.inArray(n4, datos) != -1) {
+        $(".numeroclicat4").text(2 + Math.floor(Math.random() * 5));
+        n4 = $(".numeroclicat4").text();
+    }
+
+    var random_numero1 = Math.floor(Math.random() * 4) + 1;
+    $(".numeroclicat" + random_numero1).text("1");
+
+    $(".r1").click(function () {
+        if ($(this).text() == resultado) {
+            $(".numeroclicat1").css("color", "green");
+        } else {
+            $(".vidas div:last-child").remove();
+            $(this).attr("disabled", true);
+        }
+    });
+
+    $(".r2").click(function () {
+        if ($(this).text() == resultado) {
+            $(".numeroclicat2").css("color", "green");
+        } else {
+            $(".vidas div:last-child").remove();
+            $(this).attr("disabled", true);
+        }
+    });
+
+    $(".r3").click(function () {
+        if ($(this).text() == resultado) {
+            $(".numeroclicat3").css("color", "green");
+        } else {
+            $(".vidas div:last-child").remove();
+            $(this).attr("disabled", true);
+        }
+    });
+
+    $(".r4").click(function () {
+        if ($(this).text() == resultado) {
+            $(".numeroclicat4").css("color", "green");
+        } else {
+            $(".vidas div:last-child").remove();
+            $(this).attr("disabled", true);
+        }
+    });
+    
+    
 });

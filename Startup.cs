@@ -27,8 +27,9 @@ namespace PSCORE
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
-
+                options.UseSqlServer("Server=localhost;Database=GlishWorld;User ID=SA;Password=Matilla17s!")
+            );
+            
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();

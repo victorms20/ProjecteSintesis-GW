@@ -44,5 +44,10 @@ namespace PSCORE.Controllers
         {
             return View();
         }
+
+        public IActionResult Activitat2RN()
+        {
+            return View();
+        }
     }
 }
