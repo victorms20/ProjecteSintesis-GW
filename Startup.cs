@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using PSCORE.Data;
 using PSCORE.Models;
 using PSCORE.Services;
+using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace PSCORE
 {
@@ -29,7 +31,7 @@ namespace PSCORE
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer("Server=localhost;Database=GlishWorld;User ID=SA;Password=Matilla17s!")
             );
-            
+
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
@@ -37,7 +39,16 @@ namespace PSCORE
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
 
-            services.AddMvc();
+             services.ConfigureApplicationCookie(options =>
+            {
+                options.ExpireTimeSpan = TimeSpan.FromDays(1);
+            });
+
+            services.AddCors();
+            services.AddMvc().AddJsonOptions(options => {
+                options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +65,14 @@ namespace PSCORE
             }
 
             app.UseStaticFiles();
+
+            app.UseCors(builder =>
+               builder.AllowAnyHeader()
+               .AllowAnyMethod()
+               .AllowAnyOrigin()
+               .AllowCredentials()
+               .AllowAnyHeader()
+            );
 
             app.UseAuthentication();
 

@@ -33,15 +33,18 @@
                 </button>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a asp-area="" asp-controller="Home" asp-action="Index" class="btn-toolbar">
-                            <button type="button" class="btn btn-success btn-circle btn-lg glyphicon glyphicon-tower effectbutton"></button>
-                            <button type="button" class="btn btn-primary btn-circle btn-lg glyphicon glyphicon-user margin-left effectbutton"></button>
-                            <button type="button" class="btn btn-danger btn-circle btn-lg glyphicon glyphicon-log-out margin-left effectbutton"></button>
-                        </a>
-                    </li>
-                </ul>
+                <div class="nav navbar-nav navbar-right botonesinicio">
+                            <a asp-area="" asp-controller="Home" asp-action="Index" class="btn-toolbar">
+                                <button type="button" class="btn btn-success btn-circle btn-lg glyphicon glyphicon-tower effectbutton"></button>
+                            </a>
+                            <a asp-area="" asp-controller="Home" asp-action="Progress" class="btn-toolbar">       
+                                <button type="button" class="btn btn-primary btn-circle btn-lg glyphicon glyphicon-user margin-left effectbutton"></button>
+                            </a>
+                            <a asp-area="" asp-controller="Account" asp-action="Login" class="btn-toolbar">    
+                                <button type="button" class="btn btn-danger btn-circle btn-lg glyphicon glyphicon-log-out margin-left effectbutton"></button>
+                            </a>  
+                        
+                </div>
             </div>
         </div>
     </nav>

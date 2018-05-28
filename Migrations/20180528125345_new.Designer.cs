@@ -11,8 +11,8 @@ using System;
 namespace PSCORE.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180517140606_Initial")]
-    partial class Initial
+    [Migration("20180528125345_new")]
+    partial class @new
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -129,6 +129,58 @@ namespace PSCORE.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("PSCORE.DataBase.Models.Activitat", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Fet_be");
+
+                    b.Property<string>("Nom")
+                        .HasMaxLength(100);
+
+                    b.Property<int>("Progres");
+
+                    b.Property<int?>("RegneId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RegneId");
+
+                    b.ToTable("Activitats");
+                });
+
+            modelBuilder.Entity("PSCORE.DataBase.Models.Regne", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Nom")
+                        .HasMaxLength(100);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Regnes");
+                });
+
+            modelBuilder.Entity("PSCORE.DataBase.Models.UsuarioActivitats", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int?>("ActivitatId");
+
+                    b.Property<string>("UsuarioId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ActivitatId");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("UsuarioActivitats");
+                });
+
             modelBuilder.Entity("PSCORE.Models.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
@@ -223,6 +275,24 @@ namespace PSCORE.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("PSCORE.DataBase.Models.Activitat", b =>
+                {
+                    b.HasOne("PSCORE.DataBase.Models.Regne", "Regne")
+                        .WithMany("Activitats")
+                        .HasForeignKey("RegneId");
+                });
+
+            modelBuilder.Entity("PSCORE.DataBase.Models.UsuarioActivitats", b =>
+                {
+                    b.HasOne("PSCORE.DataBase.Models.Activitat", "Activitat")
+                        .WithMany("UsuarioActivitats")
+                        .HasForeignKey("ActivitatId");
+
+                    b.HasOne("PSCORE.Models.ApplicationUser", "Usuario")
+                        .WithMany("UsuarioActivitats")
+                        .HasForeignKey("UsuarioId");
                 });
 #pragma warning restore 612, 618
         }

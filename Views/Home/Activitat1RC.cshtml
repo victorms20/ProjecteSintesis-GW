@@ -1,0 +1,91 @@
+﻿<!-- Animacion -->
+<div class="animation">
+    <div class="foreground"></div>
+    <div class="midground"></div>
+    <div class="muntanya1"></div>
+    <div id="cloud" class="target animate">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+    </div>
+    <div class="cel"></div>
+    <p class="nombre">Activitat1RC</p>
+</div>
+<!-- Audios -->
+<audio class="color1">
+    @*RED*@
+    <source src="~/Audios/COLORES/RED.ogg" type="audio/ogg">
+</audio>
+<audio class="color2">
+    @*RED*@
+    <source src="~/Audios/COLORES/YELLOW.ogg" type="audio/ogg">
+</audio>
+<audio class="color3">
+    @*GREEN*@
+    <source src="~/Audios/COLORES/GREEN.ogg" type="audio/ogg">
+</audio>
+<audio class="color4">
+    @*BLUE*@
+    <source src="~/Audios/COLORES/BLUE.ogg" type="audio/ogg">
+</audio>
+<!-- Contenido -->
+<div class="container-fluid base basea1">
+    <div class="row">
+        <div class="col-sm-3 animationHeroe">
+            <div class="textoheroe">
+            </div>
+            <div class="animacionheroe">
+                <img class="animateheroe" src="~/css/imatges/heroe.png" alt="Mountain View">
+            </div>
+        </div>
+        <div class="col-sm-8 actividad2 baseNumeros">
+            <div class="pantalla2">
+                <label class="pres_color"></label>
+            </div>
+            <div class="colorseleccion">
+                <button class="BotonColor cl1">
+                    <div class="cclicar c1"></div>
+                </button>
+                <button class="BotonColor cl2">
+                    <div class="cclicar c2"></div>
+                </button>
+                <button class="BotonColor cl3">
+                    <div class="cclicar c3"></div>
+                </button>
+                <button class="BotonColor cl4">
+                    <div class="cclicar c4"></div>
+                </button>
+            </div>
+            <div class="progress BarraAcitivdad2">
+                <div class="progress-bar progress-bar-info progress-bar-striped active PNumerosA2" role="progressbar"></div>
+            </div>
+        </div>
+        <div class="col-sm-1 vidas2">
+            <div class="vh">
+                <img class="heart" src="~/css/imatges/corazon.png">
+            </div>
+            <div class="vh">
+                <img class="heart" src="~/css/imatges/corazon.png">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- PopUp -->
+<div class="modal fade tipotexto" id="mostrarmodal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>Activitat 1!</h3>
+            </div>
+            <div class="modal-body modalflex">
+                <div id="reigno" class="animacionmodal">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" data-dismiss="modal" class="btn btn-primary botonacabar3" value="Tornar al Regne!" />
+            </div>
+        </div>
+    </div>
+</div>
+

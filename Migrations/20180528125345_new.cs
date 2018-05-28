@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace PSCORE.Migrations
 {
-    public partial class Initial : Migration
+    public partial class @new : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -46,6 +46,19 @@ namespace PSCORE.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Regnes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Nom = table.Column<string>(maxLength: 100, nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Regnes", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -154,6 +167,59 @@ namespace PSCORE.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Activitats",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Fet_be = table.Column<bool>(nullable: false),
+                    Nom = table.Column<string>(maxLength: 100, nullable: true),
+                    Progres = table.Column<int>(nullable: false),
+                    RegneId = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Activitats", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Activitats_Regnes_RegneId",
+                        column: x => x.RegneId,
+                        principalTable: "Regnes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UsuarioActivitats",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ActivitatId = table.Column<int>(nullable: true),
+                    UsuarioId = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UsuarioActivitats", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_UsuarioActivitats_Activitats_ActivitatId",
+                        column: x => x.ActivitatId,
+                        principalTable: "Activitats",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_UsuarioActivitats_AspNetUsers_UsuarioId",
+                        column: x => x.UsuarioId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Activitats_RegneId",
+                table: "Activitats",
+                column: "RegneId");
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -192,6 +258,16 @@ namespace PSCORE.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UsuarioActivitats_ActivitatId",
+                table: "UsuarioActivitats",
+                column: "ActivitatId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UsuarioActivitats_UsuarioId",
+                table: "UsuarioActivitats",
+                column: "UsuarioId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -212,10 +288,19 @@ namespace PSCORE.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "UsuarioActivitats");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
+                name: "Activitats");
+
+            migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Regnes");
         }
     }
 }

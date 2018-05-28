@@ -1,3 +1,12 @@
+.nombre {
+    visibility: hidden;
+}
+
+.botonesinicio {
+    margin-top: 20px;
+    display:flex;
+}
+
 .panel-transparent {
     background: none;
     border: none;
@@ -30,7 +39,7 @@
 
 .base {
     z-index: 1;
-    margin-top: 125px !important;
+    margin-top: 20px;
 }
 
 .baseNumeros {
@@ -39,7 +48,7 @@
 
 .RNumeros{
     width: 100%;
-    height: 100%;
+    height: 450px;
     transition: all .4s ease;
 }
 
@@ -56,12 +65,12 @@
 
 .PNumeros {
     color:black;
-    width:40%;
+    width:0%;
 }
 
 .BarraNumeros {
     height: 30px;
-    width: 200px;
+    width: 70%;
     margin-top: 20px;
     border:black 2px solid;
     box-shadow: 0 10px 6px -6px black;
@@ -79,6 +88,7 @@
 .BotonReinoNumeros {
     border:none;
     background-color: transparent !important;
+    width:100%;
 }
 .game {
     z-index: 7;
@@ -106,6 +116,10 @@
   .vidas {
       z-index: 8;
   }
+
+  .vidas2 {
+    z-index: 8;
+}
 
   .vh {
     width: 100%;
@@ -171,7 +185,7 @@
 }
 
 .ActividadBarra {
-    width: 40%;
+    width: 0%;
 }
 
 .logear {
@@ -245,4 +259,338 @@
     margin-top: 20px;
     border:black 2px solid;
     box-shadow: 0 10px 6px -6px black;
+}
+
+.tipotexto {
+    font: bold 90% monospace;
+}
+
+.botonacabar {
+    background-color: #0083FF;
+    padding-top: 10px;
+    width: 100%;
+    height: 50px;
+}
+
+.modal-header {
+    text-align: center;
+}
+
+.modalflex {
+    display:flex;
+}
+
+.animacionmodal {
+    width: 100%;
+}
+
+.imgheroemodal {
+    width: 100%;
+   float:right;
+}
+
+.PNumerosA2 {
+    color:black;
+    width:0%;
+}
+
+.actividad3 {
+    height: 100%;
+}
+
+.dividir {
+    width: 100%;
+    height: 100%;
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.dividir1 {
+    height: 100%;
+    width: 100%;
+    display:flex;
+}
+
+.dividir2 {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    font-size: 2px !important;
+}
+
+.basea1 {
+    padding-left: 0 !important;
+}
+
+.base2 {
+    z-index: 1;
+    margin-top:30px;
+}
+.resultado2 {
+    width: 100%;
+    height: 150px;
+    color:white;
+    background: linear-gradient(to bottom right, #005ACC, #4C9BFF);    
+    font-size: 80px;
+    border-radius: 20px;
+    transition: all .3s ease;
+  }
+
+.resultado2:hover {
+    backface-visibility: hidden;
+    transform: translateZ(0) scale(1.20); /* Safari and Chrome */
+}
+
+.resultado3 {
+    width: 100%;
+    height: 150px;
+    color: white;
+    background: linear-gradient(to bottom right, #4C9BFF, #005ACC);
+    font-size: 40px;
+    border-radius: 20px;
+    transition: all .3s ease;
+}
+
+  .resultado3:hover {
+    backface-visibility: hidden;
+    transform: translateZ(0) scale(1.20); /* Safari and Chrome */
+}
+
+.animationHeroe {
+    z-index: 8;
+    display:flex;
+    flex-direction: column;
+}
+
+.textoheroe {
+    color:black;
+    width: 100%;
+    height: 300px;
+    background-image: url("imatges/bocadilo.png");
+    background-size: 0 0;
+    padding-top: 50px;
+    padding-left: 40px;
+    padding-right: 20px;
+    font-size: 20px;
+}
+
+.animacionheroe {
+    width:100%;
+    height: 100%;
+}
+
+.animateheroe {
+    width:100%;
+    height:100%;
+}
+
+.separacion {
+    width:100%;
+    height:100%;
+    z-index:7;
+    background-color:red;
+}
+
+.divanimacion {
+    width: 100%;
+    height: 100%;
+}
+
+.animacionfinal {
+    z-index: 8;
+    width: 100%;
+    height: 100%;
+}
+
+.animatefinal {
+    z-index: 8;
+    width: 70%;
+    height: 70%;
+    display: block;
+    margin: auto;
+}
+
+.prograssA3 {
+    height: 10px;
+    width: 100%;
+    margin-top: 20px;
+    border: black 2px solid;
+    box-shadow: 0 10px 6px -6px black;
+}
+
+.botonacabar3 {
+    background-color: #0083FF;
+    padding-top: 10px;
+    width: 100%;
+    height: 50px;
+}
+
+.actividadR3 {
+    width: 70%;
+    height: 70%;
+}
+
+.BarraAcitivdad {
+    height: 50px;
+    width: 90%;
+    margin-top: 20px;
+    border: black 2px solid;
+    box-shadow: 0 10px 6px -6px black;
+}
+
+.base3 {
+    z-index: 1;
+}
+
+.pantalla2 {
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to bottom right, #35FF00, #397F26);
+    border-radius: 10px;
+    color: white;
+    font-size: 70px;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.pantalla2:hover {
+    background: linear-gradient(to bottom right, #397F26, #35FF00);
+}
+
+.colorseleccion {
+    width: 100%;
+    height: 100%;
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.BotonColor {
+    width: 50%;
+    height: 150px;
+    color: white;
+    background: linear-gradient(to bottom right, #FFAF00, #CC8C00);
+    padding-top: 3%;
+    padding-bottom: 3%;
+    font-size: 80px;
+    border-radius: 20px;
+    margin-top: 10px;
+    transition: all .3s ease;
+}
+
+.BotonColor:hover {
+    backface-visibility: hidden;
+    transform: translateZ(0) scale(1.20);
+}
+
+.cclicar {
+    height: 100%;
+    width: 50%;
+    margin: 0 auto;
+    border: 2px solid white;
+}
+
+.audio {
+    visibility: hidden;
+    display: none;
+}
+
+.baseProgress {
+    z-index: 7;
+}
+
+.total {
+    z-index: 8;
+}
+
+.TituloNumeros {
+    z-index: 8;
+    width: 100%;
+    height: 100%;
+    font-size: 50px;
+    font-family: monospace;
+    color: white;
+    background-color: coral;
+    text-align: center;
+}
+
+.ProgresoActividades {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    border: 2px solid black;
+}
+
+.opciones {
+    width:100%;
+    height:100%;
+    display:flex;
+}
+
+.opcion {
+    width: 100%;
+    height: 50px;
+    background-color: #00CC88;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    margin-left: 3px;
+}
+
+.opcionn {
+    width: 100%;
+    height: 50px;
+    background-color: #00CC88;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 3px;
+}
+
+.opcion1 {
+    text-align:center;
+    font-family:monospace;
+    font-size: 25px;
+    padding-top: 5px;
+}
+
+.texto {
+    height: 100%;
+    width: 60%;
+    text-align: center;
+    font-family: monospace;
+    font-size: 15px;
+    padding-top: 15px;
+    font-weight: bold;
+}
+
+.textores {
+    height: 100%;
+    width: 40%;
+    color:white;
+    border: 2px solid white;
+    background-color: #267F62;
+    text-align: center;
+    font-family: monospace;
+    font-size: 30px;   
+}
+
+.progbar {
+       border: 2px solid black;
+}
+
+.BarraFinal {
+    width: 100%;
+    height: 100%;
+    border: solid 1px orange;
+}
+
+.BarraFinal2 {
+    width: 60%;
+    height: 100%;
+    border: solid 1px orange;
+}
+
+.BarraFinal3 {
+    width: 10%;
+    height: 100%;
+    border: solid 1px orange;
 }

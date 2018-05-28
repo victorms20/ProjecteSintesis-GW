@@ -1,68 +1,99 @@
-@{
-    ViewData["Title"] = "Activitat2RN";
-}
-
 <!-- Animacion -->
 <div class="animation">
- <div class="foreground"></div>
-        <div class="midground"></div>   
-        <div class="muntanya1"></div>
-        <div id="cloud" class="target animate">
-            <div class="cloud cloud-1"></div>
-            <div class="cloud cloud-2"></div>
-            <div class="cloud cloud-3"></div>
-        </div>
-        <div class="cel"></div>
+    <div class="foreground"></div>
+    <div class="midground"></div>
+    <div class="muntanya1"></div>
+    <div id="cloud" class="target animate">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+    </div>
+    <div class="cel"></div>
+    <p class="nombre">Activitat2RN</p>
 </div>
+<audio class="audio1">
+    @*UNO*@
+    <source src="~/Audios/NUMEROS/ONE.ogg" type="audio/ogg">
+</audio>
+<audio class="audio2">
+    @*TWO*@
+    <source src="~/Audios/NUMEROS/TWO.ogg" type="audio/ogg">
+</audio>
+<audio class="audio3">
+    @*THREE*@
+    <source src="~/Audios/NUMEROS/THREE.ogg" type="audio/ogg">
+</audio>
+<audio class="audio4">
+    @*FOUR*@
+    <source src="~/Audios/NUMEROS/FOUR.ogg" type="audio/ogg">
+</audio>
+<audio class="audio5">
+    @*TWO*@
+    <source src="~/Audios/NUMEROS/FIVE.ogg" type="audio/ogg">
+</audio>
+<audio class="audio6">
+    @*TWO*@
+    <source src="~/Audios/NUMEROS/SIX.ogg" type="audio/ogg">
+</audio>
 
 <!-- Contenido -->
-
 <div class="container-fluid base">
-            <div class="row">
-                <div class="col-sm-2 vidas">
-                    <div class="vh">
-                        <img class="heart" src="~/css/imatges/corazon.png">
-                    </div>
-                    <div class="vh">
-                        <img class="heart" src="~/css/imatges/corazon.png">
-                    </div>
-                    <div class="vh">
-                        <img class="heart" src="~/css/imatges/corazon.png">
-                    </div>
-                     <div class="vh">
-                        <img class="heart" src="~/css/imatges/corazon.png">
-                    </div>
-                
-                </div>
-                <div class="col-sm-8 actividad2 baseNumeros">
-                            <div class="pantalla">
-                                <label class="pres">ONE</label> 
-                            </div>
-                            <div class="resultados">
-                                 <button class="resultado BotonReinoNumeros r1">
-                                        <label class="clicar numeroclicat1"></label>
-                                 </button>
-                                <button class="resultado BotonReinoNumeros r2">
-                                    <label class="clicar numeroclicat2"></label>
-                                </button>
-                                <button class="resultado BotonReinoNumeros r3">
-                                   <label class="clicar numeroclicat3"></label>
-                                </button>
-                                 <button class="resultado BotonReinoNumeros r4">
-                                    <label class="clicar numeroclicat4"></label>
-                                </button>
-                            </div>
-                           
-                    <div class="progress BarraAcitivdad2">
-                            <div class="progress-bar progress-bar-info progress-bar-striped active PNumerosA" 
-                            role="progressbar"></div>
-                    </div>
-                    
-                    </div>
-                <div class="col-sm-2 animationHeroe">Animation</div>
+    <div class="row ">
+        <div class="col-sm-3 animationHeroe">
+            <div class="textoheroe">
             </div>
-            
+            <div class="animacionheroe">
+                <img class="animateheroe" src="~/css/imatges/heroe.png" alt="Mountain View">
+            </div>
         </div>
-        
-
-        
+        <div class="col-sm-8 game">
+            <div class="card unmatched "></div>
+            <div class="card unmatched"></div>
+            <div class="card unmatched"></div>
+            <div class="card unmatched"></div>
+            <div class="card unmatched "></div>
+            <div class="card unmatched "></div>
+            <div class="card unmatched"></div>
+            <div class="card unmatched"></div>
+            <div class="card unmatched"></div>
+            <div class="card unmatched"></div>
+            <div class="card unmatched"></div>
+            <div class="card unmatched"></div>
+            <div class="progress BarraAcitivdad">
+                <div class="progress-bar progress-bar-info progress-bar-striped active PNumerosA infobarra" role="progressbar"></div>
+            </div>
+        </div>
+        <div class="col-sm-1 vidas">
+            <div class="vh">
+                <img class="heart" src="~/css/imatges/corazon.png">
+            </div>
+            <div class="vh">
+                <img class="heart" src="~/css/imatges/corazon.png">
+            </div>
+            <div class="vh">
+                <img class="heart" src="~/css/imatges/corazon.png">
+            </div>
+            <div class="vh">
+                <img class="heart" src="~/css/imatges/corazon.png">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- PopUp -->
+<div class="modal fade tipotexto" id="mostrarmodal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>Activitat 1!</h3>
+            </div>
+            <div class="modal-body modalflex">
+                <div id="reigno" class="animacionmodal">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="btn-toolbar btn btn-primary botonacabar">Tornar als Regnes!</a>
+            </div>
+        </div>
+    </div>
+</div>
