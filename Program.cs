@@ -22,7 +22,7 @@ namespace PSCORE
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
                 .UseKestrel(options => {
-                    options.Listen(IPAddress.Parse("192.168.14.102"), 5000);
+                    options.Listen(IPAddress.Loopback, 5000);
                 })
                 .Build();
     }

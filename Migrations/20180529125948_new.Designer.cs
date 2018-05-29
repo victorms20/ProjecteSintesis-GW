@@ -11,7 +11,7 @@ using System;
 namespace PSCORE.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180528125345_new")]
+    [Migration("20180529125948_new")]
     partial class @new
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

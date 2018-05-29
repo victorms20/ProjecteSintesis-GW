@@ -1,0 +1,11 @@
+/media/alumne2daw/VICTOR.M/DAW2/ProyectoSintesis/PSCORE/bin/Release/netcoreapp2.0/PSCORE.deps.json
+/media/alumne2daw/VICTOR.M/DAW2/ProyectoSintesis/PSCORE/bin/Release/netcoreapp2.0/PSCORE.runtimeconfig.json
+/media/alumne2daw/VICTOR.M/DAW2/ProyectoSintesis/PSCORE/bin/Release/netcoreapp2.0/PSCORE.runtimeconfig.dev.json
+/media/alumne2daw/VICTOR.M/DAW2/ProyectoSintesis/PSCORE/bin/Release/netcoreapp2.0/PSCORE.dll
+/media/alumne2daw/VICTOR.M/DAW2/ProyectoSintesis/PSCORE/bin/Release/netcoreapp2.0/PSCORE.pdb
+/media/alumne2daw/VICTOR.M/DAW2/ProyectoSintesis/PSCORE/obj/Release/netcoreapp2.0/PSCORE.csproj.CoreCompileInputs.cache
+/media/alumne2daw/VICTOR.M/DAW2/ProyectoSintesis/PSCORE/obj/Release/netcoreapp2.0/UserSecretsAssemblyInfo.cs
+/media/alumne2daw/VICTOR.M/DAW2/ProyectoSintesis/PSCORE/obj/Release/netcoreapp2.0/PSCORE.AssemblyInfoInputs.cache
+/media/alumne2daw/VICTOR.M/DAW2/ProyectoSintesis/PSCORE/obj/Release/netcoreapp2.0/PSCORE.AssemblyInfo.cs
+/media/alumne2daw/VICTOR.M/DAW2/ProyectoSintesis/PSCORE/obj/Release/netcoreapp2.0/PSCORE.dll
+/media/alumne2daw/VICTOR.M/DAW2/ProyectoSintesis/PSCORE/obj/Release/netcoreapp2.0/PSCORE.pdb

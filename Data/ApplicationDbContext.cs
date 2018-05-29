@@ -29,7 +29,7 @@ namespace PSCORE.Data
         {
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.EnableSensitiveDataLogging();
-            optionsBuilder.UseSqlServer("Server=localhost;Database=GlishWorld;User ID=SA;Password=Matilla17s!");
+            //optionsBuilder.UseSqlServer("Server=localhost;Database=GlishWorld;User ID=SA;Password=Matilla17s!");
         }
 
         public DbSet<Activitat> Activitats { get; set; }

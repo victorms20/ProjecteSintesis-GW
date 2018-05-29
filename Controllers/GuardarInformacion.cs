@@ -32,6 +32,8 @@ namespace PSCORE.Controllers
 
         private readonly ApplicationDbContext dbContext;
 
+
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult> Get()
         {
@@ -80,7 +82,7 @@ namespace PSCORE.Controllers
             {
                 ApplicationUser user = await UserManager.GetUserAsync(User);
 
-                if (AppUser is null)
+                if (user is null)
                 {
                     return BadRequest("User is null");
                 }

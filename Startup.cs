@@ -29,7 +29,7 @@ namespace PSCORE
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer("Server=localhost;Database=GlishWorld;User ID=SA;Password=Matilla17s!")
+                options.UseSqlServer("Server=hw49.dinaserver.com;Database=GlishWorld;User ID=master;Password=master")
             );
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
