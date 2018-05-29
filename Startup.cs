@@ -13,6 +13,7 @@ using PSCORE.Models;
 using PSCORE.Services;
 using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.HttpOverrides;
 
 namespace PSCORE
 {
@@ -74,6 +75,9 @@ namespace PSCORE
                .AllowAnyHeader()
             );
 
+            app.UseForwardedHeaders(new ForwardedHeadersOptions {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
             app.UseAuthentication();
 
             app.UseMvc(routes =>
