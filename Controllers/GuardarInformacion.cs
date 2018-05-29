@@ -32,7 +32,7 @@ namespace PSCORE.Controllers
 
         private readonly ApplicationDbContext dbContext;
 
-
+        //GET para enviar la informacion en la parte cliente (AJAX)
         [Authorize]
         [HttpGet]
         public async Task<ActionResult> Get()
@@ -43,7 +43,7 @@ namespace PSCORE.Controllers
             {
                 return BadRequest("User is null");
             }
-
+            //Coger solo la informacion de las actividades del usuario logeado
             List<UsuarioActivitats> usuariActivitat = await dbContext
                 .UsuarioActivitats
                 .Include(x => x.Usuario)
@@ -67,7 +67,7 @@ namespace PSCORE.Controllers
 
             return Ok(act);
         }
-
+        // Post para guardar en la base de datos la informacion de las Actividades
         [Authorize]
         [HttpPost]
         public async Task<ActionResult> Guardar([FromBody] ActivitatObject activitat_r)
@@ -80,13 +80,14 @@ namespace PSCORE.Controllers
             }
             else
             {
+                //Coger Usuario Logeado
                 ApplicationUser user = await UserManager.GetUserAsync(User);
 
                 if (user is null)
                 {
                     return BadRequest("User is null");
                 }
-
+                //Coger reino de la actividad
                 Regne regne = dbContext.Regnes.FirstOrDefault(x => x.Id == activitat_r.IdRegne);
 
                 if (regne is null)
@@ -94,6 +95,7 @@ namespace PSCORE.Controllers
                     return BadRequest("Regne is null");
                 }
 
+                //Añadir nueva actividad
                 Activitat activitat = new Activitat
                 {
                     Nom = activitat_r.Nombre,
@@ -102,6 +104,7 @@ namespace PSCORE.Controllers
                     Progres = activitat_r.Progres
                 };
 
+                //Usuario de la actividad
                 UsuarioActivitats ua = new UsuarioActivitats()
                 {
                     Activitat = activitat,
@@ -123,18 +126,13 @@ namespace PSCORE.Controllers
                 }
             }
         }
-
+        //Metodo para coger las variables de AJAX
         public class ActivitatObject
         {
             public string Nombre { get; set; }
             public int IdRegne { get; set; }
             public bool Fet_be { get; set; }
             public int Progres { get; set; }
-
-            public override string ToString()
-            {
-                return $"Nombre: {Nombre}, Idregne: {IdRegne}, FetBe: {Fet_be}, Progres: {Progres}";
-            }
         }
     }
 }

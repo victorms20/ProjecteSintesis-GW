@@ -54,6 +54,7 @@ $(document).ready(function () {
                 }
             });
         },
+        //Comprobar si las dos cartas son iguales
         checkMatch: function () {
             if ($('.selected').length === 2) {
                 if ($('.selected').first().data('cardValue') == $('.selected').last().data('cardValue')) {
@@ -202,7 +203,7 @@ $(document).ready(function () {
 
     var random_numero1 = Math.floor(Math.random() * 4) + 1;
     $(".numeroclicat" + random_numero1).text("1");
-
+    //Comprovaciones para añadir el audio
     $(".r1").click(function () {
         if ($(this).text() == resultado) {
             $(".audio")[0].play();
@@ -379,6 +380,7 @@ $(document).ready(function () {
     var numerosselect = [];
     var pos = "0123";
 
+    //Dependiendo de la opcion que hay aletoria, poner ciertos numeros
     for (var i = 1; i <= 4; i++) {
         if ($(".div1" + i).text() == 1) {
             numerosselect.push("ONE")
@@ -452,7 +454,7 @@ $(document).ready(function () {
             } else if (opcion2 == "NINE") {
                 opcion2_res = 9;
             }
-            
+            //Comprovaciones
             if (opcion1 == opcion2_res) {
                 $(".resultado2").attr("disabled", false);
                 $(".resultado3").attr("disabled", true);
@@ -526,14 +528,14 @@ $(document).ready(function () {
     //ACTIVIDAD 1 REINO COLORES
     var colores = ["YELLOW", "BLUE", "GREEN", 'RED'];
     var random_colores = Math.floor(Math.random() * colores.length);
-
+    //Coger color como opcion de seleccion
     $(".pres_color").text(colores[random_colores]);
 
     $(".c1").css("background-color", "red");
     $(".c2").css("background-color", "yellow");
     $(".c3").css("background-color", "green");
     $(".c4").css("background-color", "blue");
-
+    //Comprovaciones de los diferentes colores partiendo de que si estan bien se oiga audio
     $(".cl1").on("click", function () {
         if ($(".pres_color").text() == "RED") {
             $(".color1")[0].play();
@@ -794,7 +796,7 @@ $(document).ready(function () {
 
 
 });
-
+//Metodo POST de AJAX para conectarme a la API de la Base de datos
 $(document).ready(function () {
     var nombreActividad = $(".nombre").text();
     var regneA;
@@ -856,7 +858,8 @@ $(document).ready(function () {
     });
 });
 
-
+//Metodo POST de AJAX para conectarme a la API de la Base de datos (dado que dos actividades redirigen diferente
+//pongo otro metodo para enviar la informacion)
 $(document).ready(function () {
     var nombreActividad = $(".nombre").text();
     var regneA;
@@ -907,7 +910,7 @@ $(document).ready(function () {
     });
 });
 
-
+//Metodo GET de AJAX para recopilar la información dependiendo de la Actividad y Reino
     $(document).ready(function () {
         var contadorplusa1 = 0;
         var contadornega1 = 0; 
