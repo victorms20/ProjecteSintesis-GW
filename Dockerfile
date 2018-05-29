@@ -7,7 +7,7 @@ RUN dotnet build PSCORE.csproj -c Release -o /app
 RUN dotnet publish PSCORE.csproj -c Release -o /app
 
 FROM microsoft/aspnetcore:2.0 as base
-EXPOSE 80
+EXPOSE 5000
 WORKDIR /app
 COPY --from=build /app .
 CMD ["dotnet", "PSCORE.dll"]
